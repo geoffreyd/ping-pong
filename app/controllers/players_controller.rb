@@ -1,5 +1,4 @@
 class PlayersController < ApplicationController
-	before_filter :logged_in
 	
   def index
     @players = Player.all

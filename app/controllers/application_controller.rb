@@ -5,12 +5,14 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+	before_filter :logged_in
+
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
 	def logged_in
 		unless session[:password] == "pingpong!"
-			redirect_to :controller => 'sessions', :action => 'create' 
+			redirect_to login_path 
 			return
 		end
 	end

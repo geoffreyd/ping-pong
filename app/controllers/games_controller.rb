@@ -1,6 +1,4 @@
 class GamesController < ApplicationController
-	before_filter :logged_in
-	
 	
   def index
     @games = Game.all
