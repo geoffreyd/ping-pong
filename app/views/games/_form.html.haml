@@ -1,0 +1,12 @@
+- form_for @game do |f|
+  = f.error_messages
+  %p
+    = f.label :player
+    %br
+    = f.text_field :player
+  %p
+    = f.label :match
+    %br
+    = f.text_field :match
+  %p
+    = f.submit "Submit"

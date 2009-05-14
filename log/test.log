@@ -1,0 +1,1622 @@
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-03-31 06:50:22', '2009-03-31 06:50:22')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-03-31 06:50:22', NULL, '2009-03-31 06:50:22')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("score", "updated_at", "player_id", "match_id", "round", "created_at") VALUES(NULL, '2009-03-31 06:50:22', 996332878, 996332878, NULL, '2009-03-31 06:50:22')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#destroy (for 0.0.0.0 at 2009-03-31 16:50:24) [DELETE]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round: nil, score: nil, created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+  [4;36;1mGame Destroy (0.3ms)[0m   [0;1mDELETE FROM "games" WHERE "id" = 953125641[0m
+Redirected to http://test.host/games
+Completed in 6ms (DB: 2) | 302 Found [http://test.host/games/953125641]
+  [4;35;1mGame Exists (0.1ms)[0m   [0mSELECT "games".id FROM "games" WHERE ("games"."id" = 953125641) LIMIT 1[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#edit (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round: nil, score: nil, created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering games/edit
+Rendered games/_form (5.6ms)
+Completed in 41ms (View: 40, DB: 1) | 200 OK [http://test.host/games/953125641/edit]
+
+
+Processing GamesController#index (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+  [4;36;1mGame Load (0.6ms)[0m   [0;1mSELECT * FROM "games" [0m
+Rendering template within layouts/application
+Rendering games/index
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://test.host/games]
+
+
+Processing GamesController#new (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+Rendering template within layouts/application
+Rendering games/new
+Rendered games/_form (1.4ms)
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://test.host/games/new]
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#show (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round: nil, score: nil, created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering games/show
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/games/953125641]
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#destroy (for 0.0.0.0 at 2009-03-31 16:50:24) [DELETE]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+  [4;35;1mMatch Destroy (0.3ms)[0m   [0mDELETE FROM "matches" WHERE "id" = 953125641[0m
+Redirected to http://test.host/matches
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/matches/953125641]
+  [4;36;1mMatch Exists (0.1ms)[0m   [0;1mSELECT "matches".id FROM "matches" WHERE ("matches"."id" = 953125641) LIMIT 1[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#edit (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering matches/edit
+Rendered matches/_form (5.4ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://test.host/matches/953125641/edit]
+
+
+Processing MatchesController#index (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" [0m
+Rendering template within layouts/application
+Rendering matches/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/matches]
+
+
+Processing MatchesController#new (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+Rendering template within layouts/application
+Rendering matches/new
+Rendered matches/_form (1.9ms)
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://test.host/matches/new]
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#show (for 0.0.0.0 at 2009-03-31 16:50:24) [GET]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering matches/show
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/matches/953125641]
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#destroy (for 0.0.0.0 at 2009-03-31 16:50:24) [DELETE]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+  [4;36;1mPlayer Destroy (0.3ms)[0m   [0;1mDELETE FROM "players" WHERE "id" = 953125641[0m
+Redirected to http://test.host/players
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/players/953125641]
+  [4;35;1mPlayer Exists (0.1ms)[0m   [0mSELECT "players".id FROM "players" WHERE ("players"."id" = 953125641) LIMIT 1[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#edit (for 0.0.0.0 at 2009-03-31 16:50:25) [GET]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering players/edit
+Rendered players/_form (3.4ms)
+Completed in 6ms (View: 6, DB: 1) | 200 OK [http://test.host/players/953125641/edit]
+
+
+Processing PlayersController#index (for 0.0.0.0 at 2009-03-31 16:50:25) [GET]
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" [0m
+Rendering template within layouts/application
+Rendering players/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/players]
+
+
+Processing PlayersController#new (for 0.0.0.0 at 2009-03-31 16:50:25) [GET]
+Rendering template within layouts/application
+Rendering players/new
+Rendered players/_form (1.2ms)
+Completed in 84ms (View: 83, DB: 0) | 200 OK [http://test.host/players/new]
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#show (for 0.0.0.0 at 2009-03-31 16:50:25) [GET]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-03-31 06:50:24", updated_at: "2009-03-31 06:50:24">}
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering players/show
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/players/953125641]
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPlayer Create (0.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:14:55', '2009-04-01 07:14:55')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:14:55', NULL, '2009-04-01 07:14:55')[0m
+  [4;35;1mMatch Load (0.4ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "created_at") VALUES(NULL, NULL, '2009-04-01 07:14:55', NULL, 996332878, 996332878, '2009-04-01 07:14:55')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:14:55', '2009-04-01 07:14:55')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:14:55', '2009-04-01 07:14:55')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:14:55', NULL, '2009-04-01 07:14:55')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#destroy (for 0.0.0.0 at 2009-04-01 17:14:58) [DELETE]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round_1: nil, round_2: nil, round_3: nil, created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+  [4;36;1mGame Destroy (0.3ms)[0m   [0;1mDELETE FROM "games" WHERE "id" = 953125641[0m
+Redirected to http://test.host/games
+Completed in 6ms (DB: 2) | 302 Found [http://test.host/games/953125641]
+  [4;35;1mGame Exists (0.1ms)[0m   [0mSELECT "games".id FROM "games" WHERE ("games"."id" = 953125641) LIMIT 1[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#edit (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round_1: nil, round_2: nil, round_3: nil, created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering games/edit
+Rendered games/_form (6.1ms)
+Completed in 45ms (View: 44, DB: 1) | 200 OK [http://test.host/games/953125641/edit]
+
+
+Processing GamesController#index (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" [0m
+Rendering template within layouts/application
+Rendering games/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/games]
+
+
+Processing GamesController#new (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+Rendering template within layouts/application
+Rendering games/new
+Rendered games/_form (1.4ms)
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://test.host/games/new]
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#show (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round_1: nil, round_2: nil, round_3: nil, created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering games/show
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/games/953125641]
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#destroy (for 0.0.0.0 at 2009-04-01 17:14:58) [DELETE]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+  [4;35;1mGame Load (0.1ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 953125641) [0m
+  [4;36;1mMatch Destroy (0.5ms)[0m   [0;1mDELETE FROM "matches" WHERE "id" = 953125641[0m
+Redirected to http://test.host/matches
+Completed in 5ms (DB: 1) | 302 Found [http://test.host/matches/953125641]
+  [4;35;1mMatch Exists (0.1ms)[0m   [0mSELECT "matches".id FROM "matches" WHERE ("matches"."id" = 953125641) LIMIT 1[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#edit (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering matches/edit
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "games" WHERE ("games".match_id = 953125641) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE (("games".match_id = 953125641)) [0m
+
+
+Processing MatchesController#index (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  [4;35;1mMatch Load (0.8ms)[0m   [0mSELECT * FROM "matches" ORDER BY created_at DESC[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT "games".* FROM "games" WHERE ("games".match_id IN (953125641,996332877)) [0m
+Rendering template within layouts/application
+Rendering matches/index
+
+
+Processing MatchesController#new (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+Rendering template within layouts/application
+Rendering matches/new
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE (("games".match_id = NULL)) [0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#show (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering matches/show
+Completed in 3ms (View: 3, DB: 1) | 200 OK [http://test.host/matches/953125641]
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#destroy (for 0.0.0.0 at 2009-04-01 17:14:58) [DELETE]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+  [4;35;1mPlayer Destroy (0.3ms)[0m   [0mDELETE FROM "players" WHERE "id" = 953125641[0m
+Redirected to http://test.host/players
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/players/953125641]
+  [4;36;1mPlayer Exists (0.1ms)[0m   [0;1mSELECT "players".id FROM "players" WHERE ("players"."id" = 953125641) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#edit (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering players/edit
+Rendered players/_form (2.3ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://test.host/players/953125641/edit]
+
+
+Processing PlayersController#index (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" [0m
+Rendering template within layouts/application
+Rendering players/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/players]
+
+
+Processing PlayersController#new (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+Rendering template within layouts/application
+Rendering players/new
+Rendered players/_form (1.0ms)
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://test.host/players/new]
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#show (for 0.0.0.0 at 2009-04-01 17:14:58) [GET]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-04-01 07:14:57", updated_at: "2009-04-01 07:14:57">}
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering players/show
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/players/953125641]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPlayer Create (0.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:16:00', '2009-04-01 07:16:00')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:16:00', NULL, '2009-04-01 07:16:00')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "created_at") VALUES(NULL, NULL, '2009-04-01 07:16:00', NULL, 996332878, 996332878, '2009-04-01 07:16:00')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:16:00', '2009-04-01 07:16:00')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:16:00', '2009-04-01 07:16:00')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:16:00', NULL, '2009-04-01 07:16:00')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#destroy (for 0.0.0.0 at 2009-04-01 17:16:03) [DELETE]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round_1: nil, round_2: nil, round_3: nil, created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+  [4;36;1mGame Destroy (0.3ms)[0m   [0;1mDELETE FROM "games" WHERE "id" = 953125641[0m
+Redirected to http://test.host/games
+Completed in 6ms (DB: 2) | 302 Found [http://test.host/games/953125641]
+  [4;35;1mGame Exists (0.1ms)[0m   [0mSELECT "games".id FROM "games" WHERE ("games"."id" = 953125641) LIMIT 1[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#edit (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round_1: nil, round_2: nil, round_3: nil, created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering games/edit
+Rendered games/_form (3.8ms)
+Completed in 9ms (View: 8, DB: 1) | 200 OK [http://test.host/games/953125641/edit]
+
+
+Processing GamesController#index (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" [0m
+Rendering template within layouts/application
+Rendering games/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/games]
+
+
+Processing GamesController#new (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+Rendering template within layouts/application
+Rendering games/new
+Rendered games/_form (1.4ms)
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://test.host/games/new]
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" LIMIT 1[0m
+
+
+Processing GamesController#show (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  Parameters: {"id"=>#<Game id: 953125641, player_id: nil, match_id: nil, round_1: nil, round_2: nil, round_3: nil, created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering games/show
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/games/953125641]
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#destroy (for 0.0.0.0 at 2009-04-01 17:16:03) [DELETE]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+  [4;35;1mGame Load (0.1ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 953125641) [0m
+  [4;36;1mMatch Destroy (0.3ms)[0m   [0;1mDELETE FROM "matches" WHERE "id" = 953125641[0m
+Redirected to http://test.host/matches
+Completed in 5ms (DB: 1) | 302 Found [http://test.host/matches/953125641]
+  [4;35;1mMatch Exists (0.1ms)[0m   [0mSELECT "matches".id FROM "matches" WHERE ("matches"."id" = 953125641) LIMIT 1[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#edit (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering matches/edit
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "games" WHERE ("games".match_id = 953125641) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE (("games".match_id = 953125641)) [0m
+
+
+Processing MatchesController#index (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  [4;35;1mMatch Load (0.7ms)[0m   [0mSELECT * FROM "matches" ORDER BY created_at DESC[0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT "games".* FROM "games" WHERE ("games".match_id IN (953125641,996332877)) [0m
+Rendering template within layouts/application
+Rendering matches/index
+
+
+Processing MatchesController#new (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+Rendering template within layouts/application
+Rendering matches/new
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE (("games".match_id = NULL)) [0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" LIMIT 1[0m
+
+
+Processing MatchesController#show (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  Parameters: {"id"=>#<Match id: 953125641, number: 1, created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering matches/show
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/matches/953125641]
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#destroy (for 0.0.0.0 at 2009-04-01 17:16:03) [DELETE]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+  [4;35;1mPlayer Destroy (0.3ms)[0m   [0mDELETE FROM "players" WHERE "id" = 953125641[0m
+Redirected to http://test.host/players
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/players/953125641]
+  [4;36;1mPlayer Exists (0.1ms)[0m   [0;1mSELECT "players".id FROM "players" WHERE ("players"."id" = 953125641) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#edit (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering players/edit
+Rendered players/_form (2.4ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://test.host/players/953125641/edit]
+
+
+Processing PlayersController#index (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" [0m
+Rendering template within layouts/application
+Rendering players/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://test.host/players]
+
+
+Processing PlayersController#new (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+Rendering template within layouts/application
+Rendering players/new
+Rendered players/_form (1.0ms)
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://test.host/players/new]
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" LIMIT 1[0m
+
+
+Processing PlayersController#show (for 0.0.0.0 at 2009-04-01 17:16:03) [GET]
+  Parameters: {"id"=>#<Player id: 953125641, name: "MyString", created_at: "2009-04-01 07:16:03", updated_at: "2009-04-01 07:16:03">}
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 953125641) [0m
+Rendering template within layouts/application
+Rendering players/show
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/players/953125641]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPlayer Create (0.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:16:33', '2009-04-01 07:16:33')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:16:33', NULL, '2009-04-01 07:16:33')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "created_at") VALUES(NULL, NULL, '2009-04-01 07:16:33', NULL, 996332878, 996332878, '2009-04-01 07:16:33')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:16:33', '2009-04-01 07:16:33')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:16:33', '2009-04-01 07:16:33')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:16:33', NULL, '2009-04-01 07:16:33')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:18:29', '2009-04-01 07:18:29')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:18:29', NULL, '2009-04-01 07:18:29')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "created_at") VALUES(NULL, NULL, '2009-04-01 07:18:29', NULL, 996332878, 996332878, '2009-04-01 07:18:29')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:18:29', '2009-04-01 07:18:29')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:18:29', '2009-04-01 07:18:29')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:18:29', NULL, '2009-04-01 07:18:29')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:19:57', '2009-04-01 07:19:57')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:19:57', NULL, '2009-04-01 07:19:57')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 07:19:57', NULL, 996332878, 996332878, NULL, '2009-04-01 07:19:57')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:19:57', '2009-04-01 07:19:57')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:19:57', '2009-04-01 07:19:57')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:19:57', NULL, '2009-04-01 07:19:57')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:19:57', NULL, 996332878, 996332878, 5, '2009-04-01 07:19:57')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:19:57', NULL, 996332879, 996332878, 0, '2009-04-01 07:19:57')[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:21:06', '2009-04-01 07:21:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:21:06', NULL, '2009-04-01 07:21:06')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 07:21:06', NULL, 996332878, 996332878, NULL, '2009-04-01 07:21:06')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:21:06', '2009-04-01 07:21:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:21:06', '2009-04-01 07:21:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:21:06', NULL, '2009-04-01 07:21:06')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:21:06', NULL, 996332878, 996332878, 5, '2009-04-01 07:21:06')[0m
+  [4;35;1mGame Load (1.1ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:21:06', NULL, 996332879, 996332878, 0, '2009-04-01 07:21:06')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:24:00', '2009-04-01 07:24:00')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:24:00', NULL, '2009-04-01 07:24:00')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 07:24:00', NULL, 996332878, 996332878, NULL, '2009-04-01 07:24:00')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:24:00', '2009-04-01 07:24:00')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:24:00', '2009-04-01 07:24:00')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:24:00', NULL, '2009-04-01 07:24:00')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:24:00', NULL, 996332878, 996332878, 5, '2009-04-01 07:24:00')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:24:00', NULL, 996332879, 996332878, 0, '2009-04-01 07:24:00')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (0.3ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:24:00', '2009-04-01 07:24:00')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:24:00', '2009-04-01 07:24:00')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:24:00', NULL, '2009-04-01 07:24:00')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:24:00', NULL, 996332878, 996332878, 5, '2009-04-01 07:24:00')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:24:00', NULL, 996332879, 996332878, 0, '2009-04-01 07:24:00')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+{996332878=>[1, 0], 996332879=>[11, 11]}
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:25:48', '2009-04-01 07:25:48')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:25:48', NULL, '2009-04-01 07:25:48')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 07:25:48', NULL, 996332878, 996332878, NULL, '2009-04-01 07:25:48')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:25:48', '2009-04-01 07:25:48')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:25:48', '2009-04-01 07:25:48')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:25:48', NULL, '2009-04-01 07:25:48')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:25:48', NULL, 996332878, 996332878, 5, '2009-04-01 07:25:48')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:25:48', NULL, 996332879, 996332878, 0, '2009-04-01 07:25:48')[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (0.3ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:25:48', '2009-04-01 07:25:48')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:25:48', '2009-04-01 07:25:48')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:25:48', NULL, '2009-04-01 07:25:48')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:25:48', NULL, 996332878, 996332878, 5, '2009-04-01 07:25:48')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:25:48', NULL, 996332879, 996332878, 0, '2009-04-01 07:25:48')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+**********##
+{996332878=>[1, 0], 996332879=>[11, 11]}
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:26:37', '2009-04-01 07:26:37')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:26:37', NULL, '2009-04-01 07:26:37')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 07:26:37', NULL, 996332878, 996332878, NULL, '2009-04-01 07:26:37')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:26:37', '2009-04-01 07:26:37')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:26:37', '2009-04-01 07:26:37')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:26:38', NULL, '2009-04-01 07:26:38')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:26:38', NULL, 996332878, 996332878, 5, '2009-04-01 07:26:38')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:26:38', NULL, 996332879, 996332878, 0, '2009-04-01 07:26:38')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (0.3ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:26:38', '2009-04-01 07:26:38')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:26:38', '2009-04-01 07:26:38')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:26:38', NULL, '2009-04-01 07:26:38')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:26:38', NULL, 996332878, 996332878, 5, '2009-04-01 07:26:38')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:26:38', NULL, 996332879, 996332878, 0, '2009-04-01 07:26:38')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+**********##
+{996332878=>[1, 0], 996332879=>[11, 11]}
+996332878
+996332879
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:27:45', '2009-04-01 07:27:45')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:27:45', NULL, '2009-04-01 07:27:45')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 07:27:45', NULL, 996332878, 996332878, NULL, '2009-04-01 07:27:45')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:27:45', '2009-04-01 07:27:45')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:27:45', '2009-04-01 07:27:45')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:27:45', NULL, '2009-04-01 07:27:45')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:27:45', NULL, 996332878, 996332878, 5, '2009-04-01 07:27:45')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:27:45', NULL, 996332879, 996332878, 0, '2009-04-01 07:27:45')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (0.3ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:27:45', '2009-04-01 07:27:45')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 07:27:45', '2009-04-01 07:27:45')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.1ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 07:27:45', NULL, '2009-04-01 07:27:45')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 07:27:45', NULL, 996332878, 996332878, 5, '2009-04-01 07:27:45')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 07:27:45', NULL, 996332879, 996332878, 0, '2009-04-01 07:27:45')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+**********##
+{996332878=>[1, 0], 996332879=>[11, 11]}
+996332878
+996332879
+  [4;36;1mPlayer Create (0.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:48:48', '2009-04-01 09:48:48')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:48:48', NULL, '2009-04-01 09:48:48')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 09:48:48', NULL, 996332878, 996332878, NULL, '2009-04-01 09:48:48')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:48:48', '2009-04-01 09:48:48')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:48:48', '2009-04-01 09:48:48')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:48:48', NULL, '2009-04-01 09:48:48')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 09:48:48', NULL, 996332878, 996332878, 5, '2009-04-01 09:48:48')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 09:48:48', NULL, 996332879, 996332878, 0, '2009-04-01 09:48:48')[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (0.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:48:48', '2009-04-01 09:48:48')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:48:48', '2009-04-01 09:48:48')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:48:48', NULL, '2009-04-01 09:48:48')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 09:48:48', NULL, 996332878, 996332878, 5, '2009-04-01 09:48:48')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 09:48:48', NULL, 996332879, 996332878, 0, '2009-04-01 09:48:48')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mPlayer Create (0.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:53:06', NULL, '2009-04-01 09:53:06')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-01 09:53:06', NULL, 996332878, 996332878, NULL, '2009-04-01 09:53:06')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:53:06', NULL, '2009-04-01 09:53:06')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 09:53:06', NULL, 996332878, 996332878, 5, '2009-04-01 09:53:06')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 09:53:06', NULL, 996332879, 996332878, 0, '2009-04-01 09:53:06')[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (0.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:53:06', NULL, '2009-04-01 09:53:06')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 09:53:06', NULL, 996332878, 996332878, 5, '2009-04-01 09:53:06')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 09:53:06', NULL, 996332879, 996332878, 0, '2009-04-01 09:53:06')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+**********##
+{996332878=>[1, 0], 996332879=>[11, 11]}
+996332878
+996332879
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-01 09:53:06', '2009-04-01 09:53:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-01 09:53:06', NULL, '2009-04-01 09:53:06')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-01 09:53:06', NULL, 996332878, 996332878, 5, '2009-04-01 09:53:06')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-01 09:53:06', NULL, 996332879, 996332878, 0, '2009-04-01 09:53:06')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+**********##
+{996332878=>[1, 0], 996332879=>[11, 11]}
+996332879
+996332878
+  [4;36;1mPlayer Create (10.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:19', '2009-04-16 04:16:19')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.4ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:20', NULL, '2009-04-16 04:16:20')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:16:20', NULL, 996332878, 996332878, NULL, '2009-04-16 04:16:20')[0m
+  [4;35;1mPlayer Exists (0.3ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (13.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:20', NULL, '2009-04-16 04:16:20')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:20')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:20')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.8ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:20', NULL, '2009-04-16 04:16:20')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:20')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:20')[0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.7ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:20', NULL, '2009-04-16 04:16:20')[0m
+  [4;35;1mMatch Load (1.8ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:20')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:20')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.8ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (8.9ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:20', '2009-04-16 04:16:20')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.4ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:20', NULL, '2009-04-16 04:16:20')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.5ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:20')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:20')[0m
+  [4;36;1mGame Load (2.0ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (12.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:42', NULL, '2009-04-16 04:16:42')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:16:42', NULL, 996332878, 996332878, NULL, '2009-04-16 04:16:42')[0m
+  [4;35;1mPlayer Exists (0.4ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (9.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:42', NULL, '2009-04-16 04:16:42')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:42', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:42')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:42', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:42')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (9.9ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.5ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:42', NULL, '2009-04-16 04:16:42')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:42', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:42')[0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:42', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:42')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (18.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:16:42', '2009-04-16 04:16:42')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:16:42', NULL, '2009-04-16 04:16:42')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:16:42', NULL, 996332878, 996332878, 5, '2009-04-16 04:16:42')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:16:42', NULL, 996332879, 996332878, 0, '2009-04-16 04:16:42')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (9.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:17:11', NULL, '2009-04-16 04:17:11')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:17:11', NULL, 996332878, 996332878, NULL, '2009-04-16 04:17:11')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (6.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:17:11', NULL, '2009-04-16 04:17:11')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:17:11', NULL, 996332878, 996332878, 5, '2009-04-16 04:17:11')[0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:17:11', NULL, 996332879, 996332878, 0, '2009-04-16 04:17:11')[0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:17:11', NULL, '2009-04-16 04:17:11')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:17:11', NULL, 996332878, 996332878, 5, '2009-04-16 04:17:11')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:17:11', NULL, 996332879, 996332878, 0, '2009-04-16 04:17:11')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (12.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;35;1mPlayer Load (0.5ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.4ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:17:11', NULL, '2009-04-16 04:17:11')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:17:11', NULL, 996332878, 996332878, 5, '2009-04-16 04:17:11')[0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:17:11', NULL, 996332879, 996332878, 0, '2009-04-16 04:17:11')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (9.9ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:17:11', '2009-04-16 04:17:11')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:17:11', NULL, '2009-04-16 04:17:11')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:17:11', NULL, 996332878, 996332878, 5, '2009-04-16 04:17:11')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:17:11', NULL, 996332879, 996332878, 0, '2009-04-16 04:17:11')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (17.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:05', '2009-04-16 04:18:05')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:05', NULL, '2009-04-16 04:18:05')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:18:05', NULL, 996332878, 996332878, NULL, '2009-04-16 04:18:05')[0m
+  [4;35;1mPlayer Exists (0.3ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (13.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:05', '2009-04-16 04:18:05')[0m
+  [4;35;1mPlayer Load (1.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:05', '2009-04-16 04:18:05')[0m
+  [4;35;1mPlayer Load (1.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:05', NULL, '2009-04-16 04:18:05')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.5ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:05', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:05')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:05', NULL, 996332879, 996332878, 1, '2009-04-16 04:18:05')[0m
+  [4;35;1mGame Load (1.1ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (1.0ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (17.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:05', '2009-04-16 04:18:05')[0m
+  [4;36;1mPlayer Load (2.6ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:05', '2009-04-16 04:18:05')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:05', NULL, '2009-04-16 04:18:05')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.7ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:06', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:06')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:06', NULL, 996332879, 996332878, 1, '2009-04-16 04:18:06')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (17.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:06', '2009-04-16 04:18:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:06', '2009-04-16 04:18:06')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:06', NULL, '2009-04-16 04:18:06')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:06', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:06')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:06', NULL, 996332879, 996332878, 1, '2009-04-16 04:18:06')[0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (14.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:06', '2009-04-16 04:18:06')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:06', '2009-04-16 04:18:06')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.4ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:06', NULL, '2009-04-16 04:18:06')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:06', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:06')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:06', NULL, 996332879, 996332878, 1, '2009-04-16 04:18:06')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (13.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:55', '2009-04-16 04:18:55')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.7ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:55', NULL, '2009-04-16 04:18:55')[0m
+  [4;35;1mMatch Load (0.4ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:18:55', NULL, 996332878, 996332878, NULL, '2009-04-16 04:18:55')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (39.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:55', '2009-04-16 04:18:55')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:55', '2009-04-16 04:18:55')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:55', NULL, '2009-04-16 04:18:55')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:55', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:55')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:55', NULL, 996332879, 996332878, 0, '2009-04-16 04:18:55')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (25.7ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:56', '2009-04-16 04:18:56')[0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:56', '2009-04-16 04:18:56')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:56', NULL, '2009-04-16 04:18:56')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:56', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:56')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.4ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:56', NULL, 996332879, 996332878, 0, '2009-04-16 04:18:56')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (12.0ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:57', '2009-04-16 04:18:57')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:57', '2009-04-16 04:18:57')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:57', NULL, '2009-04-16 04:18:57')[0m
+  [4;35;1mMatch Load (0.4ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:57', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:57')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:57', NULL, 996332879, 996332878, 0, '2009-04-16 04:18:57')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (12.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:57', '2009-04-16 04:18:57')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:18:57', '2009-04-16 04:18:57')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:18:57', NULL, '2009-04-16 04:18:57')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:18:57', NULL, 996332878, 996332878, 5, '2009-04-16 04:18:57')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:18:57', NULL, 996332879, 996332878, 0, '2009-04-16 04:18:57')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (13.0ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:21:53', NULL, '2009-04-16 04:21:53')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:21:53', NULL, 996332878, 996332878, NULL, '2009-04-16 04:21:53')[0m
+  [4;35;1mPlayer Exists (0.3ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (10.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;35;1mPlayer Load (0.6ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:21:53', NULL, '2009-04-16 04:21:53')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:21:53', NULL, 996332878, 996332878, 5, '2009-04-16 04:21:53')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:21:53', NULL, 996332879, 996332878, 0, '2009-04-16 04:21:53')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.8ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.0ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:21:53', NULL, '2009-04-16 04:21:53')[0m
+  [4;36;1mMatch Load (0.4ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:21:53', NULL, 996332878, 996332878, 5, '2009-04-16 04:21:53')[0m
+  [4;36;1mGame Load (1.0ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:21:53', NULL, 996332879, 996332878, 0, '2009-04-16 04:21:53')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;35;1mPlayer Load (0.6ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:53', '2009-04-16 04:21:53')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.4ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:21:53', NULL, '2009-04-16 04:21:53')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:21:53', NULL, 996332878, 996332878, 5, '2009-04-16 04:21:53')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:21:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:21:54')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:54', '2009-04-16 04:21:54')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:21:54', '2009-04-16 04:21:54')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:21:54', NULL, '2009-04-16 04:21:54')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:21:54', NULL, 996332878, 996332878, 5, '2009-04-16 04:21:54')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:21:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:21:54')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (8.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:22:33', NULL, '2009-04-16 04:22:33')[0m
+  [4;35;1mMatch Load (0.4ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:22:33', NULL, 996332878, 996332878, NULL, '2009-04-16 04:22:33')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (7.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:22:33', NULL, '2009-04-16 04:22:33')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:22:33', NULL, 996332878, 996332878, 5, '2009-04-16 04:22:33')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:22:33', NULL, 996332879, 996332878, 0, '2009-04-16 04:22:33')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (11.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:22:33', NULL, '2009-04-16 04:22:33')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:22:33', NULL, 996332878, 996332878, 5, '2009-04-16 04:22:33')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:22:33', NULL, 996332879, 996332878, 0, '2009-04-16 04:22:33')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:22:33', NULL, '2009-04-16 04:22:33')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:22:33', NULL, 996332878, 996332878, 5, '2009-04-16 04:22:33')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:22:33', NULL, 996332879, 996332878, 0, '2009-04-16 04:22:33')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (11.0ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:22:33', '2009-04-16 04:22:33')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:22:33', NULL, '2009-04-16 04:22:33')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:22:33', NULL, 996332878, 996332878, 5, '2009-04-16 04:22:33')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:22:33', NULL, 996332879, 996332878, 0, '2009-04-16 04:22:33')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:23:32', NULL, '2009-04-16 04:23:32')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:23:32', NULL, 996332878, 996332878, NULL, '2009-04-16 04:23:32')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (10.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:23:32', NULL, '2009-04-16 04:23:32')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:23:32', NULL, 996332878, 996332878, 5, '2009-04-16 04:23:32')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:23:32', NULL, 996332879, 996332878, 0, '2009-04-16 04:23:32')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.6ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:23:32', NULL, '2009-04-16 04:23:32')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:23:32', NULL, 996332878, 996332878, 5, '2009-04-16 04:23:32')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:23:32', NULL, 996332879, 996332878, 0, '2009-04-16 04:23:32')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (8.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:23:32', NULL, '2009-04-16 04:23:32')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:23:32', NULL, 996332878, 996332878, 5, '2009-04-16 04:23:32')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:23:32', NULL, 996332879, 996332878, 0, '2009-04-16 04:23:32')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.6ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (5.8ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:23:32', '2009-04-16 04:23:32')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (1.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:23:32', NULL, '2009-04-16 04:23:32')[0m
+  [4;36;1mMatch Load (0.5ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:23:32', NULL, 996332878, 996332878, 5, '2009-04-16 04:23:32')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:23:32', NULL, 996332879, 996332878, 0, '2009-04-16 04:23:32')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:19', '2009-04-16 04:24:19')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:19', NULL, '2009-04-16 04:24:19')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:24:19', NULL, 996332878, 996332878, NULL, '2009-04-16 04:24:19')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (11.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:19', '2009-04-16 04:24:19')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:19', '2009-04-16 04:24:19')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:19', NULL, '2009-04-16 04:24:19')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:19', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:19')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.9ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:19', NULL, 996332879, 996332878, 0, '2009-04-16 04:24:19')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (9.7ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:19', '2009-04-16 04:24:19')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:20', '2009-04-16 04:24:20')[0m
+  [4;36;1mPlayer Load (0.5ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:20', NULL, '2009-04-16 04:24:20')[0m
+  [4;36;1mMatch Load (0.4ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.4ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:20')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:24:20')[0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (11.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:20', '2009-04-16 04:24:20')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:20', '2009-04-16 04:24:20')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:20', NULL, '2009-04-16 04:24:20')[0m
+  [4;35;1mMatch Load (0.4ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:20')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:24:20')[0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.8ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:20', '2009-04-16 04:24:20')[0m
+  [4;36;1mPlayer Load (0.6ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:20', '2009-04-16 04:24:20')[0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:20', NULL, '2009-04-16 04:24:20')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.4ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:20', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:20')[0m
+  [4;36;1mGame Load (0.6ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:20', NULL, 996332879, 996332878, 0, '2009-04-16 04:24:20')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (8.5ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:35', NULL, '2009-04-16 04:24:35')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:24:35', NULL, 996332878, 996332878, NULL, '2009-04-16 04:24:35')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (10.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:35', NULL, '2009-04-16 04:24:35')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:35', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:35')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:35', NULL, 996332879, 996332878, NULL, '2009-04-16 04:24:35')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.6ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:35', NULL, '2009-04-16 04:24:35')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:35', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:35')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:35', NULL, 996332879, 996332878, NULL, '2009-04-16 04:24:35')[0m
+  [4;36;1mGame Load (0.7ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;35;1mPlayer Load (0.9ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:35', NULL, '2009-04-16 04:24:35')[0m
+  [4;35;1mMatch Load (0.4ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:35', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:35')[0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:35', NULL, 996332879, 996332878, NULL, '2009-04-16 04:24:35')[0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.6ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:24:35', '2009-04-16 04:24:35')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:24:35', NULL, '2009-04-16 04:24:35')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:24:35', NULL, 996332878, 996332878, 5, '2009-04-16 04:24:35')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:24:35', NULL, 996332879, 996332878, NULL, '2009-04-16 04:24:35')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (11.8ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:54', '2009-04-16 04:25:54')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.9ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:25:54', NULL, '2009-04-16 04:25:54')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:25:54', NULL, 996332878, 996332878, NULL, '2009-04-16 04:25:54')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (7.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:54', '2009-04-16 04:25:54')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:54', '2009-04-16 04:25:54')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:25:54', NULL, '2009-04-16 04:25:54')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:25:54', NULL, 996332878, 996332878, 5, '2009-04-16 04:25:54')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:25:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:25:54')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (5.6ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:54', '2009-04-16 04:25:54')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:55', '2009-04-16 04:25:55')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (1.1ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:25:55', NULL, '2009-04-16 04:25:55')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:25:55', NULL, 996332878, 996332878, 5, '2009-04-16 04:25:55')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:25:55', NULL, 996332879, 996332878, 0, '2009-04-16 04:25:55')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (6.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:55', '2009-04-16 04:25:55')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:55', '2009-04-16 04:25:55')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.4ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:25:55', NULL, '2009-04-16 04:25:55')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:25:55', NULL, 996332878, 996332878, 5, '2009-04-16 04:25:55')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:25:55', NULL, 996332879, 996332878, 0, '2009-04-16 04:25:55')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (8.0ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:55', '2009-04-16 04:25:55')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:25:55', '2009-04-16 04:25:55')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:25:55', NULL, '2009-04-16 04:25:55')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:25:55', NULL, 996332878, 996332878, 5, '2009-04-16 04:25:55')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:25:55', NULL, 996332879, 996332878, 0, '2009-04-16 04:25:55')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Destroy (0.1ms)[0m   [0mDELETE FROM "games" WHERE "id" = 996332879[0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:25:55', NULL, 996332879, 996332878, NULL, '2009-04-16 04:25:55')[0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332880) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (14.8ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:31', '2009-04-16 04:29:31')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:31', NULL, '2009-04-16 04:29:31')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:29:31', NULL, 996332878, 996332878, NULL, '2009-04-16 04:29:31')[0m
+  [4;35;1mPlayer Exists (0.5ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (10.7ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:31', '2009-04-16 04:29:31')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:31', '2009-04-16 04:29:31')[0m
+  [4;35;1mPlayer Load (0.5ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:31', NULL, '2009-04-16 04:29:31')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:31', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:31')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:31', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:31')[0m
+  [4;35;1mGame Load (1.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.9ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (29.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:31', '2009-04-16 04:29:31')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:31', '2009-04-16 04:29:31')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:31', NULL, '2009-04-16 04:29:31')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (1.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:31', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:31')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:31', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:31')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (12.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:32', '2009-04-16 04:29:32')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:32', '2009-04-16 04:29:32')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:32', NULL, '2009-04-16 04:29:32')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:32', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:32')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:32', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:32')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (5.5ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:32', '2009-04-16 04:29:32')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:32', '2009-04-16 04:29:32')[0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (1.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:32', NULL, '2009-04-16 04:29:32')[0m
+  [4;36;1mMatch Load (1.0ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:32', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:32')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:32', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:32')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Destroy (0.1ms)[0m   [0mDELETE FROM "games" WHERE "id" = 996332879[0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:32', NULL, 996332879, 996332878, NULL, '2009-04-16 04:29:32')[0m
+  [4;35;1mGame Load (1.8ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332880) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (8.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:53', '2009-04-16 04:29:53')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:53', NULL, '2009-04-16 04:29:53')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:29:53', NULL, 996332878, 996332878, NULL, '2009-04-16 04:29:53')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (8.3ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:54', NULL, '2009-04-16 04:29:54')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:54', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:54')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:54')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.6ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (11.9ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:54', NULL, '2009-04-16 04:29:54')[0m
+  [4;36;1mMatch Load (0.3ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:54', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:54')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:54')[0m
+  [4;36;1mGame Load (1.1ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (8.7ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.2ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (1.1ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:54', NULL, '2009-04-16 04:29:54')[0m
+  [4;35;1mMatch Load (1.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:54', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:54')[0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:54')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (8.3ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:29:54', '2009-04-16 04:29:54')[0m
+  [4;36;1mPlayer Load (0.6ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.4ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:29:54', NULL, '2009-04-16 04:29:54')[0m
+  [4;36;1mMatch Load (0.6ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:29:54', NULL, 996332878, 996332878, 5, '2009-04-16 04:29:54')[0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:54', NULL, 996332879, 996332878, 0, '2009-04-16 04:29:54')[0m
+  [4;36;1mGame Load (0.8ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Destroy (0.2ms)[0m   [0mDELETE FROM "games" WHERE "id" = 996332879[0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:29:54', NULL, 996332879, 996332878, NULL, '2009-04-16 04:29:54')[0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332880) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mSQL (4.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPlayer Create (8.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:24', '2009-04-16 04:31:24')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.4ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:24', NULL, '2009-04-16 04:31:24')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:31:24', NULL, 996332878, 996332878, NULL, '2009-04-16 04:31:24')[0m
+  [4;35;1mPlayer Exists (0.3ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (9.4ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:24', '2009-04-16 04:31:24')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:24', '2009-04-16 04:31:24')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:24', NULL, '2009-04-16 04:31:24')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:24', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:24')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:24', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:24')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.6ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.4ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:24', '2009-04-16 04:31:24')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:24', '2009-04-16 04:31:24')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:24', NULL, '2009-04-16 04:31:24')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:24', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:24')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:24', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:24')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (2.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (19.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:24', '2009-04-16 04:31:24')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:25', '2009-04-16 04:31:25')[0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:25', NULL, '2009-04-16 04:31:25')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:25', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:25')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:25', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:25')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (7.5ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:25', '2009-04-16 04:31:25')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.1ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:25', '2009-04-16 04:31:25')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:25', NULL, '2009-04-16 04:31:25')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:25', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:25')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:25', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:25')[0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Destroy (0.1ms)[0m   [0mDELETE FROM "games" WHERE "id" = 996332879[0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:25', NULL, 996332879, 996332878, NULL, '2009-04-16 04:31:25')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332880) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (10.0ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:37', '2009-04-16 04:31:37')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mMatch Create (0.2ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:37', NULL, '2009-04-16 04:31:37')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.3ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(NULL, NULL, '2009-04-16 04:31:37', NULL, 996332878, 996332878, NULL, '2009-04-16 04:31:37')[0m
+  [4;35;1mPlayer Exists (0.2ms)[0m   [0mSELECT "players".id FROM "players" INNER JOIN "games" ON "players".id = "games".player_id WHERE ("players"."id" = 996332878) AND (("games".match_id = 996332878)) LIMIT 1[0m
+  [4;36;1mPlayer Create (9.6ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:37', '2009-04-16 04:31:37')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:37', '2009-04-16 04:31:37')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:37', NULL, '2009-04-16 04:31:37')[0m
+  [4;35;1mMatch Load (0.3ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.4ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:37', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:37')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:37', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:37')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.4ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (10.6ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:38', '2009-04-16 04:31:38')[0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:38', '2009-04-16 04:31:38')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.2ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:38', NULL, '2009-04-16 04:31:38')[0m
+  [4;36;1mMatch Load (0.4ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:38', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:38')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.1ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:38', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:38')[0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Load (0.5ms)[0m   [0mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;36;1mPlayer Create (8.9ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:38', '2009-04-16 04:31:38')[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;36;1mPlayer Create (0.1ms)[0m   [0;1mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:38', '2009-04-16 04:31:38')[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;36;1mMatch Create (0.3ms)[0m   [0;1mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:38', NULL, '2009-04-16 04:31:38')[0m
+  [4;35;1mMatch Load (0.2ms)[0m   [0mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:38', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:38')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;36;1mGame Create (0.2ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:38', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:38')[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;36;1mGame Load (0.7ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m
+  [4;35;1mPlayer Create (9.8ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:38', '2009-04-16 04:31:38')[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332878) [0m
+  [4;35;1mPlayer Create (0.2ms)[0m   [0mINSERT INTO "players" ("name", "updated_at", "created_at") VALUES(NULL, '2009-04-16 04:31:38', '2009-04-16 04:31:38')[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 996332879) [0m
+  [4;35;1mMatch Create (0.3ms)[0m   [0mINSERT INTO "matches" ("updated_at", "number", "created_at") VALUES('2009-04-16 04:31:38', NULL, '2009-04-16 04:31:38')[0m
+  [4;36;1mMatch Load (0.2ms)[0m   [0;1mSELECT * FROM "matches" WHERE ("matches"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(6, 5, '2009-04-16 04:31:38', NULL, 996332878, 996332878, 5, '2009-04-16 04:31:38')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332878) [0m
+  [4;35;1mGame Create (0.2ms)[0m   [0mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:38', NULL, 996332879, 996332878, 0, '2009-04-16 04:31:38')[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 996332879) [0m
+  [4;35;1mGame Destroy (0.6ms)[0m   [0mDELETE FROM "games" WHERE "id" = 996332879[0m
+  [4;36;1mGame Create (0.1ms)[0m   [0;1mINSERT INTO "games" ("round_1", "round_2", "updated_at", "round_3", "player_id", "match_id", "handicap", "created_at") VALUES(11, 11, '2009-04-16 04:31:38', NULL, 996332879, 996332878, NULL, '2009-04-16 04:31:38')[0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 996332880) [0m
+  [4;36;1mGame Load (0.5ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".match_id = 996332878) [0m

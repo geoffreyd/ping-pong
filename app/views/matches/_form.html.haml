@@ -1,0 +1,29 @@
+- @players = Player.all.collect {|p| [ p.name, p.id ] }
+/ - @p_options = options_from_collection_for_select(@players, "id", "name")
+- form_for setup_match(@match) do |f|
+  = f.error_messages
+  
+  %ul
+    - f.fields_for :games do |game_f|
+      %li 
+        - break if @match.players.size > 2
+        = game_f.select "player_id", @players, { :include_blank => true }
+        = game_f.text_field("round_1", :size => 2) + ","
+        = game_f.text_field("round_2", :size => 2) + ","
+        = game_f.text_field("round_3", :size => 2)
+        points, with handicap
+        = game_f.text_field("handicap", :size => 2)
+        
+
+  / - if params[:action] == "new"
+  /   = select_tag "player1", @p_options
+  /   vs
+  /   = select_tag "player2", @p_options
+  / -else
+  /   = @match.players.first.name
+  /   vs
+  /   = @match.players.last.name
+    
+  
+  %p
+    = f.submit "Submit"

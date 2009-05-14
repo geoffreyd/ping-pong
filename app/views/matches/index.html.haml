@@ -1,0 +1,33 @@
+- title "Matches"
+
+%p= link_to "New Match", new_match_path
+
+.matches
+  - for match in @matches
+    - @p1_game = match.games.first
+    - @p2_game = match.games.last
+    .name
+      = link_to(@p1_game.player.name, @p1_game.player)+" ("+@p1_game.handicap.to_s+")"
+      vs
+      = link_to(@p2_game.player.name, @p2_game.player)+" ("+@p2_game.handicap.to_s+")"
+    .handycap
+      - if @p1_game.round_1.blank? && @p2_game.round_1.blank?
+        This game should be played with a handy cap of:
+      - else
+        The next game should be played with handycaps:
+      = @p1_game.player.name+": "+@p1_game.player.handicap(@p2_game.player).to_s+", "
+      = @p2_game.player.name+": "+@p2_game.player.handicap(@p1_game.player).to_s
+    .scores
+      %ul
+        -if !@p1_game.round_1.blank?
+          %li=@p1_game.round_1.to_s + " - " + @p2_game.round_1.to_s 
+        -if !@p1_game.round_2.blank?
+          %li=@p1_game.round_2.to_s + " - " + @p2_game.round_2.to_s 
+        -if !@p1_game.round_3.blank?
+          %li=@p1_game.round_3.to_s + " - " + @p2_game.round_3.to_s 
+    .actions
+      = link_to 'Show', match
+      = link_to 'Edit', edit_match_path(match)
+      = link_to 'Destroy', match, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Match", new_match_path
