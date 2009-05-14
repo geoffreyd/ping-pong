@@ -5,6 +5,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :players
 
+	map.connect 'login', :controller => 'sessions', :action => 'create'  
+	map.connect 'logout', :controller => 'sessions', :action => 'destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

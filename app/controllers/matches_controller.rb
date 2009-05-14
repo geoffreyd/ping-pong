@@ -1,5 +1,7 @@
 class MatchesController < ApplicationController
-  def index
+  before_filter :logged_in
+
+	def index
     @matches = Match.all :include => :players, :order => "created_at DESC"
   end
   
