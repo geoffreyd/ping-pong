@@ -16,5 +16,5 @@ group :test do
   # bundler requires these gems while running tests
   # gem "rspec"
   # gem "faker"
-  gem "thoughtbot-shoulda", :require => "shoulda"
+  gem "shoulda"
 end
