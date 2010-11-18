@@ -1,5 +1,5 @@
 source :gemcutter
-gem "rails", "~> 2.3.2"
+gem "rails", "2.3.2"
 gem "sqlite3-ruby", :require => "sqlite3"
 
 # bundler requires these gems in all environments
